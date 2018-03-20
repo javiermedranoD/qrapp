@@ -6,6 +6,19 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding="">
-  <button ion-button (click)="qrscanner()">qrscanner</button>
-  <button ion-button (click)="push()">push</button>
+  <!-- <button ion-button block (click)="qrscanner()">qrscanner</button> -->
+  <ion-item>
+    <ion-input type="text" placeholder="MY QR data" [(ngModel)]="qrData">
+    </ion-input>
+  </ion-item>
+  <button ion-button block icon-left color="danger" (click)="push()"><ion-icon name="qr-scanner"></ion-icon>QR Scanner</button>
+  <button ion-button block outline icon-left  (click)="createCode()"><ion-icon name="barcode"></ion-icon>QR generate</button>
+
+  <ion-card *ngIf="createdCode">
+    <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+    <ion-card-content>
+      <p>Value: {{ createdCode }}</p>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

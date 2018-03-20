@@ -10,6 +10,7 @@ import { QRScanner } from '@ionic-native/qr-scanner';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { QrscannerPage } from "../pages/qrscanner/qrscanner";
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { QrscannerPage } from "../pages/qrscanner/qrscanner";
   ],
   imports: [
     BrowserModule,
+    NgxQRCodeModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
