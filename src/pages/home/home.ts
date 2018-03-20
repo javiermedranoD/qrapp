@@ -6,16 +6,24 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
 
 import { QrscannerPage } from "../qrscanner/qrscanner";
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
+  qrData = null;
+  createdCode = null;
+
   constructor(public navCtrl: NavController,
               public androidpermissions: AndroidPermissions,
               public qrScanner: QRScanner) {
 
+  }
+
+  createCode() {
+    this.createdCode = this.qrData;
   }
 
   push() {
